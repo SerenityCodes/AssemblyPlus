@@ -8,17 +8,17 @@ AssemblyPlus takes a different approach. Instead of taking after C, take after a
 // Fibonaci
 func fib(u32 n)
 START
-MOV R0, 0
-MOV R1, 1
-MOV R2, 0
-MOV R3, n
+R0 = 0;
+R1 = 1;
+R2 = 0;
+R3 = n;
 Loop_Begin
-ADD R2, R1, R0
-MOV R1, R0
-MOV R2, R1
-DEC R3
+R2 = R0 + R1;
+R0 = R1; 
+R1 = R2;
+R3--;
 LOOP R3 > 0 to Loop_Begin
 Loop_End
-PUSH 
+PUSH R2
 END
 ```
